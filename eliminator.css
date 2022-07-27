@@ -1,0 +1,39 @@
+.electron-app: {
+}
+
+.container {
+    width:350px;
+    margin:auto;
+}
+.left {
+    float:left;
+    width:25%;
+    border:10px;
+}
+.right {
+    float:right;
+    width:75%;
+    padding-bottom:10px;
+}
+
+.footer {
+    clear: both;
+    width:100%;
+    text-align:right;
+    background-color:silver;
+}
+.header {
+    clear: both;
+    width:100%;
+    text-align:left;
+    background-color:silver;
+}
+
+table {
+  table-layout: fixed ;
+  width: 100% ;
+}
+td {
+  width: 25% ;
+  text-align: center;
+}

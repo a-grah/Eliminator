@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <link rel="stylesheet" href="eliminator.css">
+  </head>
+  <body>
+    <div class="header">
+      <h1><span id="app-name">Eliminator! Web</span></h1>
+    </div>
+    <span hidden class="electron-app" id="electron-app">
+    <small>We are using Node.js <span id="node-version"></span>,
+      Chromium <span id="chrome-version"></span>,
+      and Electron <span id="electron-version"></span>. </small>
+    </span>
+    <hr>
+    Status: <span id="status"></span>
+    <hr>
+    We have
+    <select id="voterCfg">
+      <option value="10">10</option>
+      <option value="100">100</option>
+      <option value="1000">1,000</option>
+      <option selected="selected" value="10000">10,000</option>
+      <option value="50000">50,000</option>
+      <option value="100000">100,000</option>
+    </select> eligible voters.
+    <hr>
+    <table>
+      <tr>
+        <td><span id="c0"></span></td>
+        <td><span id="c1"></span></td>
+        <td><span id="c2"></span></td>
+        <td><span id="c3"></span></td>
+      </tr>
+      <tr>
+        <td><span id="v0"></span></td>
+        <td><span id="v1"></span></td>
+        <td><span id="v2"></span></td>
+        <td><span id="v3"></span></td>
+      </tr>
+    </table>
+
+    <hr>
+    A total of <span id="totalVotes"></span> were cast.
+    <br><span id="uncast"></span> did not vote.
+    <br><span id="counter"></span>
+
+    <p>
+      <input type="button" id="btnVt" value="Vote"  />
+    </p>
+    <p>
+      <div class="container">
+        <div class="left">Contestents</div>
+        <div class="right">
+          <form>
+            <input type="text" id="ci0" name="fname"><br>
+            <input type="text" id="ci1" name="fname"><br>
+            <input type="text" id="ci2" name="fname"><br>
+            <input type="text" id="ci3" name="fname"><br>
+            <input type="submit" value="Reset">
+          </form>
+
+        </div>
+      </div>
+    </p>
+    <div class="footer">
+      &copy 2022 Ryan Grah and Blue Pill Software Ltd.
+    </div>
+    <script src="./renderer.js"></script>
+  </body>
+</html>
