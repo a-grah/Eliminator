@@ -7,10 +7,13 @@ This can be deployed as an electron app or on a simple web server.
 ## install
 
 Clone this repo: 
+
 git clone https://github.com/a-grah/eliminator.git
 
 ### Build Electron version
+
 npm install
+
 npm start
 
 ### On a webserver
