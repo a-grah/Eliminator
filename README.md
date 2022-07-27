@@ -4,7 +4,12 @@ The Eliminator casts votes for contestants that are up for elimination.
 
 This can be deployed as an electron app or on a simple web server.
 
-## install
+## Try Me.
+
+You can use Eliminator on our public site:  https://eliminator.bluepill.ca
+
+
+## Install
 
 Clone this repo: 
 
@@ -16,6 +21,6 @@ npm install
 
 npm start
 
-### On a webserver
+### On A Web Server
 
 Simply copy the html and css files to your webserver.  You also will need to copy renderer.js
