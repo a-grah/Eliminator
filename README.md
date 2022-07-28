@@ -13,13 +13,14 @@ You can use Eliminator on our public site:  https://eliminator.bluepill.ca
 
 Clone this repo: 
 
-git clone https://github.com/a-grah/eliminator.git
+    git clone https://github.com/a-grah/eliminator.git
 
 ### Build Electron version
 
-npm install
-
-npm start
+    npm install
+    npm start
+    % To build an executable use:
+    npm run make
 
 ### On A Web Server
 
