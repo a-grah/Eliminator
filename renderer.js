@@ -192,3 +192,9 @@ function doVoting() {
 }
 
 document.getElementById('btnVt').onclick = function(){ doVoting() }
+document.getElementById('infoOverlayButton').onclick = function() {
+  document.getElementById('infoOverlay').style.display = "block"
+}
+document.getElementById('closeOverlayButton').onclick = function() {
+  document.getElementById('infoOverlay').style.display = "none"
+}

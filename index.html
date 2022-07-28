@@ -7,8 +7,26 @@
     <link rel="stylesheet" href="eliminator.css">
   </head>
   <body>
+    <div id="infoOverlay" class="overlay">
+      <a id="closeOverlayButton" class="closebtn" href="#">&times;</a>
+      <div class="overlay-content">
+        Eliminator! is written by Ryan Grah and Blue Pill Software Ltd.
+        <p>Visit our publicly available web app at
+
+        <a href="https://eliminator.bluepill.ca">https://eliminator.bluepill.ca</a>
+
+        <hr>
+
+        Get the source code
+        <a href="https://github.com/a-grah/eliminator">Source Code on GitHub</a>
+        (https://github.com/a-grah/eliminator)
+      </div>
+    </div>
+
     <div class="header">
-      <h1><span id="app-name">Eliminator! Web</span></h1>
+      <h1><span id="app-name">Eliminator! Web</span>
+    <div id="infoOverlayButton">&#9776;</div>
+    </h1>
     </div>
     <span hidden class="electron-app" id="electron-app">
     <small>We are using Node.js <span id="node-version"></span>,
