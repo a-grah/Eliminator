@@ -6,7 +6,8 @@ This can be deployed as an electron app or on a simple web server.
 
 ## Try Me.
 
-You can use Eliminator on our public site:  https://eliminator.bluepill.ca
+You can use Eliminator on our public site:  
+    https://eliminator.bluepill.ca
 
 
 ## Install
