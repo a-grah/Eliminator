@@ -13,7 +13,7 @@
     "url": "https://gitlab.l3tr.ca/agrah/Eliminator.git"
   },
   "author": "Adrian Grah",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@electron-forge/cli": "^6.0.0-beta.64",
     "@electron-forge/maker-deb": "^6.0.0-beta.64",
