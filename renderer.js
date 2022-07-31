@@ -59,6 +59,9 @@ function simulateVoting() {
   replaceText("status", `Voting In Progress`)
   document.getElementById('status').style.color = "red"
 
+  var audio = new Audio('drum-roll-sound-effect/drum-roll-sound-effect.mp3');
+  audio.play();
+
   contestants[0]= document.getElementById('ci0').value
   contestants[1]= document.getElementById('ci1').value
   contestants[2]= document.getElementById('ci2').value
@@ -72,16 +75,13 @@ function simulateVoting() {
   replaceText('totalVotes', 0   )
   replaceText('uncast', 0)
   // Update the count down every 1 second
-  var maxCount = Math.min(unCast, 2000)
-  var yy = maxCount
+  var totalTime = 6  // run simulated counting for 6 seconds
+  var tick = 50     // tick every 100 ms
+  var ticksNeeded = totalTime*1000/tick
+  var yy = 0
   x = setInterval(function() {
     //replaceText('counter', yy)
-    let percentToReport
-    if( unCast == 0 ) {
-      percentToReport = 1
-    } else {
-      percentToReport = 1 -  yy/maxCount
-    }
+    let percentToReport = yy / ticksNeeded
 
     //
     // Dont update the cound for each contestant
@@ -96,9 +96,9 @@ function simulateVoting() {
     if (Math.random() > 0.85)
       replaceText('v3',Math.round(votes[3] * percentToReport))
 
-    yy -= 1
-    if (yy<0) stopTimerInterval()
-  }, 5)
+    yy += 1
+    if (yy>= ticksNeeded ) stopTimerInterval()
+  }, tick)
 }
 
 function stopTimerInterval() {
