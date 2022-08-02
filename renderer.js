@@ -53,7 +53,7 @@ window.addEventListener('DOMContentLoaded', () => {
   replaceText('uncast', unCast)
 })
 
-var x
+var intervalTimer
 function simulateVoting() {
 
   replaceText("status", `Voting In Progress`)
@@ -79,7 +79,7 @@ function simulateVoting() {
   var tick = 50     // tick every 100 ms
   var ticksNeeded = totalTime*1000/tick
   var yy = 0
-  x = setInterval(function() {
+  intervalTimer = setInterval( () => {
     //replaceText('counter', yy)
     let percentToReport = yy / ticksNeeded
 
@@ -102,7 +102,7 @@ function simulateVoting() {
 }
 
 function stopTimerInterval() {
-  clearInterval(x)
+  clearInterval(intervalTimer)
   replaceText("status", `Voting Complete`)
   document.getElementById('status').style.color = "green"
 
@@ -191,10 +191,10 @@ function doVoting() {
   simulateVoting()
 }
 
-document.getElementById('btnVt').onclick = function(){ doVoting() }
-document.getElementById('infoOverlayButton').onclick = function() {
+document.getElementById('btnVt').onclick = () => { doVoting() }
+document.getElementById('infoOverlayButton').onclick = () => {
   document.getElementById('infoOverlay').style.display = "block"
 }
-document.getElementById('closeOverlayButton').onclick = function() {
+document.getElementById('closeOverlayButton').onclick = () => {
   document.getElementById('infoOverlay').style.display = "none"
 }
