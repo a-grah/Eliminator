@@ -11,9 +11,7 @@ const replaceText = (selector, text) => {
   if (element) element.innerText = text
 }
 
-//replaceText("status", `Voting In Progress`)
 replaceText("status", `Ready To Vote`)
-// document.getElementById('status').style.color = "red"
 
 var numberVoters       // The number of voters
 const minimumEliminatorVotes = 20000   // to be eligible for elimination the contestent must have at least this many votes
@@ -29,13 +27,7 @@ console.log("The Renderer is here.")
 console.log(contestants)
 console.log(votes)
 
-// doVoting()
-
-
-
-
 window.addEventListener('DOMContentLoaded', () => {
-
   replaceText('c0', contestants[0])
   replaceText('c1', contestants[1])
   replaceText('c2', contestants[2])
@@ -74,9 +66,8 @@ function simulateVoting() {
 
   replaceText('totalVotes', 0   )
   replaceText('uncast', 0)
-  // Update the count down every 1 second
   var totalTime = 6  // run simulated counting for 6 seconds
-  var tick = 50     // tick every 100 ms
+  var tick = 50     // tick every xx ms
   var ticksNeeded = totalTime*1000/tick
   var yy = 0
   intervalTimer = setInterval( () => {
@@ -97,7 +88,7 @@ function simulateVoting() {
       replaceText('v3',Math.round(votes[3] * percentToReport))
 
     yy += 1
-    if (yy>= ticksNeeded ) stopTimerInterval()
+    if (yy> ticksNeeded ) stopTimerInterval()
   }, tick)
 }
 
