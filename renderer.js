@@ -31,20 +31,17 @@ console.log("The Renderer is here.")
 console.log(contestants)
 console.log(votes)
 
-window.addEventListener('DOMContentLoaded', () => {
-  replaceText('c0', contestants[0])
-  replaceText('c1', contestants[1])
-  replaceText('c2', contestants[2])
-  replaceText('c3', contestants[3])
-  document.getElementById('ci0').value = contestants[0]
-  document.getElementById('ci1').value = contestants[1]
-  document.getElementById('ci2').value = contestants[2]
-  document.getElementById('ci3').value = contestants[3]
+const cIDs = ['c0', 'c1', 'c2', 'c3']       // Contestants names table fields
+const ciIDs = ['ci0', 'ci1', 'ci2', 'ci3']  // Contestant name input fields
+const vIDs = ['v0', 'v1', 'v2', 'v3']       // Vote count table fields
 
-  replaceText('v0', votes[0])
-  replaceText('v1', votes[1])
-  replaceText('v2', votes[2])
-  replaceText('v3', votes[3])
+window.addEventListener('DOMContentLoaded', () => {
+  for( let idx=0;idx<numContestents;idx++ ) {
+    replaceText(cIDs[idx], contestants[idx])
+    document.getElementById(ciIDs[idx]).value = contestants[idx]
+    replaceText(vIDs[idx], votes[idx])
+
+  }
   replaceText('totalVotes', votesCast   )
   replaceText('uncast', unCast)
 })
@@ -58,15 +55,12 @@ function simulateVoting() {
   var audio = new Audio('drum-roll-sound-effect/drum-roll-sound-effect.mp3');
   audio.play();
 
-  contestants[0]= document.getElementById('ci0').value
-  contestants[1]= document.getElementById('ci1').value
-  contestants[2]= document.getElementById('ci2').value
-  contestants[3]= document.getElementById('ci3').value
+  for( let idx=0;idx<numContestents;idx++ ) {
+    contestants[idx]= document.getElementById(ciIDs[idx]).value
+    replaceText(cIDs[idx], contestants[idx])
+
+  }
   console.log(contestants)
-  replaceText('c0', contestants[0])
-  replaceText('c1', contestants[1])
-  replaceText('c2', contestants[2])
-  replaceText('c3', contestants[3])
 
   replaceText('totalVotes', 0   )
   replaceText('uncast', 0)
@@ -82,14 +76,10 @@ function simulateVoting() {
     // Dont update the cound for each contestant
     // on every tick. Try to make the result presentation more dramatic
     //
-    if (Math.random() > 0.85)
-      replaceText('v0',Math.round(votes[0] * percentToReport))
-    if (Math.random() > 0.85)
-      replaceText('v1',Math.round(votes[1] * percentToReport))
-    if (Math.random() > 0.85)
-      replaceText('v2',Math.round(votes[2] * percentToReport))
-    if (Math.random() > 0.85)
-      replaceText('v3',Math.round(votes[3] * percentToReport))
+    for( let idx=0;idx<numContestents;idx++ ) {
+      if (Math.random() > 0.85)
+        replaceText(vIDs[idx],Math.round(votes[idx] * percentToReport))
+    }
 
     yy += 1
     if (yy> ticksNeeded ) stopTimerInterval()
@@ -101,10 +91,9 @@ function stopTimerInterval() {
   replaceText("status", `Voting Complete`)
   document.getElementById('status').style.color = "green"
 
-  replaceText('v0',votes[0] )
-  replaceText('v1',votes[1] )
-  replaceText('v2',votes[2] )
-  replaceText('v3',votes[3] )
+  for( let idx=0;idx<numContestents;idx++ ) {
+    replaceText(vIDs[idx],votes[idx] )
+  }
 
   let maxVotes = 0
   var idxMax = 0
@@ -116,7 +105,7 @@ function stopTimerInterval() {
     console.log(`${idxMax} -> ${maxVotes}`)
   }
 
-  for (let vote = 0; vote < 4; vote++){
+  for (let vote = 0; vote < numContestents; vote++){
     let targetId = `v${vote}`
     let targetContestantId = `c${vote}`
     if (vote == idxMax) {
