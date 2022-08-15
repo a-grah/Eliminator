@@ -1,3 +1,4 @@
 node_modules
 out
 private
+.DS_Store
