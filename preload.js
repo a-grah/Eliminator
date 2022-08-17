@@ -3,8 +3,14 @@
 
 var autocomplete = require('autocompleter');
 
-var countries = [
+const countries = [
   { label: 'Tennis Ball' },
+  { label: 'Squash Ball' },
+  { label: 'Train' },
+  { label: 'Alien Crossing Sign' },
+  { label: 'Camera' },
+  { label: 'BFDI' },
+  { label: 'Pokemon' },
   { label: 'Golf Ball' },
   { label: 'Kiwi Crossing Sign' },
   { label: 'Wedding Mario' },
