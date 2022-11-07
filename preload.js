@@ -5,6 +5,8 @@ var autocomplete = require('autocompleter');
 
 const countries = [
   { label: 'Tennis Ball' },
+  { label: 'Tripod' },
+  { label: 'Firetruck' },
   { label: 'Squash Ball' },
   { label: 'Train' },
   { label: 'Alien Crossing Sign' },
